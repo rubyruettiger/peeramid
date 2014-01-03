@@ -5,10 +5,12 @@
 	= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
 	= javascript_include_tag "application", "data-turbolinks-track" => true
 	= csrf_meta_tags
+	%meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
+
+	<link href='http://fonts.googleapis.com/css?family=lato' rel='stylesheet' type='text/css'>
+
 
 %body
-
-	%p= link_to 'Home', root_path
-	%p= link_to 'Jobs', jobs_path
-
-	= yield
+	= render :partial => 'layouts/header'
+	.container
+		= yield
