@@ -9,39 +9,33 @@ html {
 body {
 	font-size: 1.6em;
 	width: 100%;
+	background-color: #3B3B3B;
+}
+
+.container {
+	width: auto;
 }
 
 a {
 	color: white;
 }
 
-.btn a:hover {
-	color: rgba(231, 76, 60, 1.0);
+.btn-lg a:hover {
+	color: white;
 	text-decoration: none;
 }
 
 
-
-.homepage {
-	background: url('bricks.jpg') no-repeat 50% 0 fixed;
-	background-size: cover;
-	-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  height: 40em;
-  width: 100%;
-  font-family: futura;
+.well {
+	background-color: hsla(190, 96%, 40%, .85);
+	padding: 5px;
+	border-style: none;
+	top: 50%;
 }
 
-.jumbotron {
-	background-color: rgba(231, 76, 60, 0.7);
-	color: white;
-	margin-top: 3em;
-}
 
-.center {
-	text-align: center;
-}
+
+
 
 
 /* navigation bar */
@@ -54,8 +48,49 @@ a {
 
 .navbar-brand {
 	font-size: 2em;
-	font-family: 'lato';
+	font-family: 'playfair display';
+	letter-spacing: 5px;
 	&:hover {
-		color: green;
+		color: white;
 	}
+}
+
+
+
+
+/* landing page */
+
+
+#home1 {
+	background: url('hike.jpg') no-repeat 50% 0 fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 40em;
+  width: 100%;
+  font-family: futura;
+}
+
+#home2 {
+	background: url('bricks.jpg') no-repeat 50% 0 fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 40em;
+  width: 100%;
+  font-family: futura;
+  color: white;
+  padding-top: 50px;
+}
+
+.jumbotron {
+	background-color: rgba(231, 76, 60, 0.85);
+	color: white;
+	margin-top: 3em;
+}
+
+.center {
+	text-align: center;
 }
