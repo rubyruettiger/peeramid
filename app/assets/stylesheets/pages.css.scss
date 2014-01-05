@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 html {
 	font-size: 62.5%;
 }
@@ -11,7 +12,12 @@ body {
 	width: 100%;
 	padding-top: 70px;
 	background-color: white;
+	background: url('triangular.png') repeat;
 }
+
+
+
+/* Bootstrap Classes */
 
 .container {
 	width: auto;
@@ -39,9 +45,35 @@ body {
 }
 
 
+
+
+/* Classes */
+
+
 .center {
 	text-align: center;
 }
+
+
+
+
+
+/* sticky footer */
+
+.wrapper {
+  min-height: 100%;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+
+
+footer, .push {
+  height: 4em;
+  text-align: center;
+  padding-bottom: 2em;
+}
+
+
 
 
 
@@ -93,6 +125,9 @@ background-color: transparent;
 color: white;
 }
 
+
+
+
 /* landing page */
 
 
@@ -134,7 +169,7 @@ color: white;
 
 
 #brickwall {
-	margin-top: 10em;
+	margin-top: 15em;
 	color: white;
 }
 
@@ -143,6 +178,7 @@ color: white;
 	font-size: 60px;
 	font-weight: bold;
 }
+
 
 
 
@@ -159,3 +195,7 @@ color: white;
 		margin-top: 0;
 	}
 }
+
+	#brickwall {
+		margin-top: 5em;
+	}

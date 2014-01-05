@@ -11,8 +11,10 @@
 
 
 %body
-	= render :partial => 'layouts/header'
-	.container
-		- flash.each do |name, msg|
-			= content_tag(:div, msg, class: "alert alert-#{name}")
-		= yield
+	.wrapper
+		= render :partial => 'layouts/header'
+		.container
+			- flash.each do |name, msg|
+				= content_tag(:div, msg, class: "alert alert-#{name}")
+			= yield
+		= render :partial => 'layouts/footer'
