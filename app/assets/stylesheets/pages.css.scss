@@ -10,7 +10,7 @@ body {
 	font-size: 1.6em;
 	width: 100%;
 	padding-top: 70px;
-	background-color: gray;
+	background-color: white;
 }
 
 .container {
@@ -32,52 +32,66 @@ body {
 
 
 .well {
-	background-color: hsla(190, 96%, 40%, .85);
+	background-color: hsla(190, 96%, 40%, .5);
+	border-radius: 5px;
 	padding: 5px;
 	border-style: none;
-	top: 50%;
 }
 
 
-
+.center {
+	text-align: center;
+}
 
 
 
 /* navigation bar */
 
-.navbar {
+.navbar-default {
 	background-color: #39AECF;
 	border-radius: 0;
 	margin-bottom: 0;
 	color: white;
+	border-bottom: none;
 }
 
-.navbar a {
+.navbar-default .navbar-nav > li > a {
 	color: white;
+	&:hover {
+		color: white;
+	}
 }
 
-.navbar-brand {
+.navbar-default .navbar-brand {
 	font-size: 2em;
 	font-family: 'playfair display';
-	letter-spacing: 5px;
+	letter-spacing: 4px;
 	font-weight: bold;
 	color: white;
 	&:hover {
 		color: white;
 		text-decoration: none;
+		letter-spacing: 5px;
 	}
+	transition: letter-spacing 1s;
 }
 
-.nav > li > a:hover, .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-	background-color: #39AECF;
+.navbar-default .navbar-toggle {
+	background-color: hsla(6, 78, 50, 1);
+	border: none;
+	&:hover {
+		background-color: hsla(6, 78, 57, 1);
+	}
+	&:focus {
+		background-color: hsla(6, 78, 57, 1);
+	};
 }
 
-.navbar .collapse {
-	margin-left: 30px;
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+background-color: transparent;
+color: white;
 }
-
-
-
 
 /* landing page */
 
@@ -94,6 +108,12 @@ body {
 }
 
 #home2 {
+	height: 1em;
+	width: 100%;
+	background-color: black;
+}
+
+#home3 {
 	background: url('bricks.jpg') no-repeat 50% 0 fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
@@ -107,11 +127,35 @@ body {
 }
 
 .jumbotron {
-	background-color: rgba(231, 76, 60, 0.7);
+	background-color: rgba(231, 76, 60, 0.0);
 	color: white;
 	margin-top: 3em;
 }
 
-.center {
-	text-align: center;
+
+#brickwall {
+	margin-top: 10em;
+	color: white;
+}
+
+
+#brickwall h1 {
+	font-size: 60px;
+	font-weight: bold;
+}
+
+
+
+
+/* Media Queries */
+
+@media screen and (max-width: 480px) {
+
+	.panel {
+		width: 290px;
+	}
+
+	.jumbotron {
+		margin-top: 0;
+	}
 }
