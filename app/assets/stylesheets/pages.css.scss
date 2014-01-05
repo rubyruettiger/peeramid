@@ -12,7 +12,7 @@ body {
 	width: 100%;
 	padding-top: 70px;
 	background-color: white;
-	background: url('triangular.png') repeat;
+	background: url('triangular.png') repeat fixed;
 }
 
 
@@ -55,6 +55,12 @@ body {
 }
 
 
+.divider {
+	height: 1em;
+	width: 100%;
+	background-color: black;
+}
+
 
 
 
@@ -71,6 +77,7 @@ footer, .push {
   height: 4em;
   text-align: center;
   padding-bottom: 2em;
+  font-family: "playfair display";
 }
 
 
@@ -143,12 +150,6 @@ color: white;
 }
 
 #home2 {
-	height: 1em;
-	width: 100%;
-	background-color: black;
-}
-
-#home3 {
 	background: url('bricks.jpg') no-repeat 50% 0 fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
