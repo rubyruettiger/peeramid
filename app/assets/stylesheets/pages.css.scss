@@ -56,7 +56,7 @@ body {
 
 
 .divide {
-	height: 1em;
+	height: .1em;
 	width: 100%;
 	background-color: black;
 }
@@ -72,9 +72,15 @@ body {
   margin: 0 auto -4em;
 }
 
+footer {
+	height: 4em;
+}
+
+.push {
+	height: 1em;
+}
 
 footer, .push {
-  height: 4em;
   text-align: center;
   padding-bottom: 2em;
   font-family: "playfair display";
@@ -104,15 +110,13 @@ footer, .push {
 .navbar-default .navbar-brand {
 	font-size: 2em;
 	font-family: 'playfair display';
-	letter-spacing: 4px;
+	letter-spacing: 2px;
 	font-weight: bold;
 	color: white;
 	&:hover {
 		color: white;
 		text-decoration: none;
-		letter-spacing: 5px;
 	}
-	transition: letter-spacing 1s;
 }
 
 .navbar-default .navbar-toggle {
