@@ -88,5 +88,4 @@ Peeramid::Application.configure do
   config.assets.compile = true
   config.assets.digest = true
 
-}
 end
