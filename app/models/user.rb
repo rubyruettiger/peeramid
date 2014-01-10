@@ -5,5 +5,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :progressions
-  has_many :lessons, :sections, :courses, :through => :progressions
+  has_many :lessons
+  has_many :sections
+  has_many :courses, :through => :progressions
+
+
+  def initialize
+  	email = 'Sven@gmail.com'
+  end
+
 end
