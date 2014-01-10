@@ -6,7 +6,11 @@ class User < ActiveRecord::Base
 
   has_many :progressions
 
-  has_many :apprenticeships, foreign_key: "student_id", dependent: :destroy, class_name: "Tutorships"
-  has_many :mentorships, foreign_key: "teacher_id", dependent: :destroy, class_name: "Tutorships"
+
+  has_many :tutorships, foreign_key: "tutor_id", dependent: :destroy
+  has_many :students, :through => :tutorships, source: :student
+
+  # has_many :apprenticeships, foreign_key: "student_id", dependent: :destroy, class_name: "Tutorships"
+  # has_many :mentorships, foreign_key: "tutor_id", dependent: :destroy, class_name: "Tutorships"
 
 end

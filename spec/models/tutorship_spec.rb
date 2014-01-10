@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe Tutorship do
   
-  let(:student) { FactoryGirl.create(:user) }
-  let(:tutor) { FactoryGirl.create(:user) }
-  let(:tutorship) { student.tutorships.build(tutor_id: tutor.id) }
+  let(:user_a) { User.new }
+  let(:user_b) { User.new }
+  let(:tutorship) { user_a.tutorships.build(tutor_id: user_b.id) }
 
   subject { tutorship }
 

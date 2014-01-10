@@ -27,15 +27,23 @@ gem 'jbuilder', '~> 1.2'
 gem 'haml-rails'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'devise', '~> 3.1.1'
+gem 'guard-rspec'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
+group :test do
+	gem 'capybara'
+end
+
 group :development, :test do
      gem 'pg'
      gem 'rspec-rails', '~> 3.0.0.beta'
+     gem 'spork-rails', '4.0.0'
+  	 gem 'guard-spork', '1.5.0'
+  	 gem 'childprocess', '0.3.6'
 end
 
 group :production do
