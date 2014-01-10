@@ -1,6 +1,12 @@
 Peeramid::Application.routes.draw do
 
 
+  resources :sections
+
+  resources :lessons
+
+  resources :courses
+
   devise_for :users
   
   root 'pages#home'
