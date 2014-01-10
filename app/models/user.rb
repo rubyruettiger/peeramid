@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
 
   has_many :apprenticeships, foreign_key: "student_id", depdent: :destroy, :class_name
   has_many :mentorships, foreign_key: "student_id", dependent: :destroy
+
 end
