@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :progressions
+
+  has_many :apprenticeships, foreign_key: "student_id", depdent: :destroy, :class_name
+  has_many :mentorships, foreign_key: "student_id", dependent: :destroy
 end
