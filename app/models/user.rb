@@ -5,5 +5,4 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :progressions
-  has_many :lessons, :sections, :courses, :through => :progressions
 end
