@@ -5,9 +5,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :progressions
-  has_many :lessons
-  has_many :sections
-  has_many :courses, :through => :progressions
+
+
+  has_many :tutorships, foreign_key: "tutor_id", dependent: :destroy
+  has_many :students, :through => :tutorships, source: :student
+
+  # has_many :apprenticeships, foreign_key: "student_id", dependent: :destroy, class_name: "Tutorships"
+  # has_many :mentorships, foreign_key: "tutor_id", dependent: :destroy, class_name: "Tutorships"
 
 
   def progress?
