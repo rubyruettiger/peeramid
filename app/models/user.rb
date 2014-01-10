@@ -9,4 +9,9 @@ class User < ActiveRecord::Base
   has_many :sections
   has_many :courses, :through => :progressions
 
+
+  def progress?
+  	self.progressions > 0
+  end
+
 end
