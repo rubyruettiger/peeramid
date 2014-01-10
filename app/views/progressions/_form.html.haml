@@ -1,0 +1,25 @@
+= form_for @progression do |f|
+  - if @progression.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@progression.errors.count, "error")} prohibited this progression from being saved:"
+      %ul
+        - @progression.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :progressable_id
+    = f.number_field :progressable_id
+  .field
+    = f.label :progressable_type
+    = f.text_field :progressable_type
+  .field
+    = f.label :is_completed
+    = f.check_box :is_completed
+  .field
+    = f.label :is_approved
+    = f.check_box :is_approved
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,27 @@
+%h1 Listing progressions
+
+%table
+  %tr
+    %th Name
+    %th Progressable
+    %th Progressable type
+    %th Is completed
+    %th Is approved
+    %th
+    %th
+    %th
+
+  - @progressions.each do |progression|
+    %tr
+      %td= progression.name
+      %td= progression.progressable_id
+      %td= progression.progressable_type
+      %td= progression.is_completed
+      %td= progression.is_approved
+      %td= link_to 'Show', progression
+      %td= link_to 'Edit', edit_progression_path(progression)
+      %td= link_to 'Destroy', progression, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Progression', new_progression_path

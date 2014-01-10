@@ -1,6 +1,8 @@
 Peeramid::Application.routes.draw do
 
 
+  resources :progressions
+
   resources :sections
 
   resources :lessons

@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @progression.name
+%p
+  %b Progressable:
+  = @progression.progressable_id
+%p
+  %b Progressable type:
+  = @progression.progressable_type
+%p
+  %b Is completed:
+  = @progression.is_completed
+%p
+  %b Is approved:
+  = @progression.is_approved
+
+= link_to 'Edit', edit_progression_path(@progression)
+\|
+= link_to 'Back', progressions_path
