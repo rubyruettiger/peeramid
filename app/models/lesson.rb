@@ -4,4 +4,6 @@ class Lesson < ActiveRecord::Base
 
 	has_many :progressions, :as => :progressable
 	has_many :users, :through => :progressions
+
+	validates :name, presence: true
 end
