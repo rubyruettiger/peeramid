@@ -9,9 +9,4 @@ class User < ActiveRecord::Base
   has_many :sections
   has_many :courses, :through => :progressions
 
-
-  def initialize
-  	email = 'Sven@gmail.com'
-  end
-
 end
