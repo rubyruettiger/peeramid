@@ -11,13 +11,17 @@ describe Tutorship do
 
   it { should be_valid }
 
+  it 'should match users to the methods' do
+    subject.student.should == user_b
+    subject.tutor.should == user_a
+  end
 
-  describe "when student id is not present" do
+  context "when student id is not present" do
     before { tutorship.student_id = nil }
     it { should_not be_valid }
   end
 
-  describe "when tutor id is not present" do
+  context "when tutor id is not present" do
     before { tutorship.tutor_id = nil }
     it { should_not be_valid }
   end
@@ -36,12 +40,11 @@ describe Tutorship do
   # 	@user_b.students.should include(@user_a)
   # end
 
-	# describe 'tutorship methods' do
-	# 	it { should respond_to(:student) }
-	# 	it { should respond_to(:tutor) }
-	# 	its(:student) { should eq user_a }
-	# 	its(:tutor) { should eq user_b }
-	# end
+	describe 'tutorship methods' do
+		it { should respond_to(:student) }
+		it { should respond_to(:tutor) }
+
+	end
 
 
 end
