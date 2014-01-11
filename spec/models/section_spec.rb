@@ -13,4 +13,4 @@ require 'spec_helper'
 		it { should respond_to(:lessons) }
 		it { should respond_to(:course) }
 		
-	end
+end
