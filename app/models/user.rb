@@ -16,4 +16,8 @@ class User < ActiveRecord::Base
   	self.first_name + " " + self.last_name
   end
 
+  def get_teacher!(tutor)
+  	tutor.tutorships.build(student_id: self.id)
+  end
+
 end

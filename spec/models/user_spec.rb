@@ -6,14 +6,27 @@ describe User do
 	it { should respond_to(:students)}
 	it { should respond_to(:tutors)}
 
+
+
 	it 'should have an email' do
 		user = User.new(:email => "Sven@gmail.com")
 		user.email.should == 'Sven@gmail.com'
 	end
 
+<<<<<<< HEAD
 	it 'should have a first name' do
 		user = User.new(first_name:"Dirk")
 		user.first_name.should == "Dirk"
+=======
+	context "grab teacher" do
+		let(:other_user) { FactoryGirl.create(:user)}
+		before do
+			@user.save
+			@user.get_teacher!(other_user)
+		end
+	    it { should respond_to(:tutorships)}
+
+>>>>>>> 43a60c812204953047fa5ac596de5ba88f34ae4c
 	end
 
 
