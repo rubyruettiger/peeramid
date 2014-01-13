@@ -50,6 +50,13 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     database_cleaner (1.1.1)
+    columnize (0.3.6)
+    debugger (1.6.3)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.4)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.2.4)
     devise (3.1.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -216,7 +223,11 @@ DEPENDENCIES
   capybara
   childprocess (= 0.3.6)
   coffee-rails (~> 4.0.0)
+<<<<<<< HEAD
   database_cleaner
+=======
+  debugger
+>>>>>>> 190e470bcf12c86280a697fdc1e64313ce90c74d
   devise (~> 3.1.1)
   factory_girl_rails
   guard-rspec

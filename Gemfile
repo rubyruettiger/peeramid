@@ -47,6 +47,7 @@ group :development, :test do
   	 gem 'childprocess', '0.3.6'
      gem 'factory_girl_rails'
      gem 'database_cleaner'
+     gem 'debugger'
 end
 
 group :production do
