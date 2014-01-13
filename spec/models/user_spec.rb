@@ -13,7 +13,7 @@ describe User do
 		user.email.should == 'Sven@gmail.com'
 	end
 
-	context "grab teacher" do
+	pending "grab teacher" do
 		let(:other_user) { FactoryGirl.create(:user)}
 		before do
 			@user.save

@@ -69,6 +69,7 @@ describe ProgressionsController do
         }.to change(Progression, :count).by(1)
       end
 
+
       it "assigns a newly created progression as @progression" do
         post :create, {:progression => valid_attributes}, valid_session
         expect(assigns(:progression)).to be_a(Progression)
