@@ -2,13 +2,10 @@ require 'spec_helper'
 
 describe Tutorship do
 
-
   let(:user_a) { FactoryGirl.create(:user) }
   let(:user_b) { FactoryGirl.create(:user) }
-  let(:tutorship) { user_a.tutorships.build(student_id: user_b.id) }
+  subject { tutorship} { user_a.tutorships.build(student_id: user_b.id) }
 
-
-  subject { tutorship }
 
   it { should be_valid }
 

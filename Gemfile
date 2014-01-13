@@ -28,6 +28,7 @@ gem 'haml-rails'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'devise', '~> 3.1.1'
 gem 'guard-rspec'
+# gem 'rspec-its'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -45,7 +46,7 @@ group :development, :test do
   	 gem 'guard-spork', '1.5.0'
   	 gem 'childprocess', '0.3.6'
      gem 'factory_girl_rails'
-
+     gem 'database_cleaner'
 end
 
 group :production do
