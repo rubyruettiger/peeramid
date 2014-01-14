@@ -5,6 +5,7 @@
 - @course.sections.each do |s|
 	.well
 		%h2= s.name
+		%b= s.description
 		= link_to "Edit Section", edit_course_section_path(@course, s)
 		- s.lessons.each do |l|
 			.panel
