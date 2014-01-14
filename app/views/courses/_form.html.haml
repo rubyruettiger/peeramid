@@ -1,0 +1,16 @@
+= form_for @course do |f|
+	.field
+		= f.label :name
+		%br
+		= f.text_field :name
+	.field
+		= f.label :description
+		%br
+		= f.text_area :description
+	%h3 Sections
+	#sections
+		= f.fields_for :sections do |section|
+			= render 'section_fields', :f => section
+		.links
+			= link_to_add_association 'add section', f, :sections
+	= f.submit

@@ -28,6 +28,7 @@ gem 'haml-rails'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'devise', '~> 3.1.1'
 gem 'guard-rspec'
+gem 'cocoon'
 # gem 'rspec-its'
 
 group :doc do

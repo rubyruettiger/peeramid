@@ -1,15 +1,17 @@
 Peeramid::Application.routes.draw do
 
 
-  resources :progressions
-
-  resources :sections
-
-  resources :lessons
-
-  resources :courses
+  resources :courses do
+    resources :sections do
+      resources :lessons
+    end
+  end
 
   devise_for :users
+
+  resources :users do
+    resources :progressions
+  end
   
   root 'pages#home'
   get 'help' =>  'pages#help'

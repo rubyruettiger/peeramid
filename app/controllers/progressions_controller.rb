@@ -1,15 +1,19 @@
 class ProgressionsController < ApplicationController
   before_action :set_progression, only: [:show, :edit, :update, :destroy]
+  before_filter :get_user
+
+
 
   # GET /progressions
   # GET /progressions.json
   def index
-    @progressions = Progression.all
+    @progressions = @user.progressions
   end
 
   # GET /progressions/1
   # GET /progressions/1.json
   def show
+    @progression = @user.progressions.find(params[:id])
   end
 
   # GET /progressions/new
@@ -24,12 +28,12 @@ class ProgressionsController < ApplicationController
   # POST /progressions
   # POST /progressions.json
   def create
-    @progression = Progression.new(progression_params)
+    @progression = @user.progressions.new(params[:progression])
 
     respond_to do |format|
       if @progression.save
-        format.html { redirect_to @progression, notice: 'Progression was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @progression }
+        format.html { redirect_to [@user, @progression], notice: 'Progression was successfully created.' }
+        format.json { render action: 'show', status: :created, location: [@user, @progression] }
       else
         format.html { render action: 'new' }
         format.json { render json: @progression.errors, status: :unprocessable_entity }
@@ -59,6 +63,10 @@ class ProgressionsController < ApplicationController
       format.html { redirect_to progressions_url }
       format.json { head :no_content }
     end
+  end
+
+  def get_user
+    @user = User.find(params[:user_id])
   end
 
   private

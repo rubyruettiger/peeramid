@@ -16,7 +16,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @lesson, notice: 'Course was successfully created.' }
+        format.html { redirect_to @course, notice: 'Course was successfully created.' }
         format.json { render action: 'show', status: :created, location: @course }
       else
         format.html { render action: 'new' }
@@ -32,7 +32,7 @@ class CoursesController < ApplicationController
   def update
     respond_to do |format|
       if @course.update(course_params)
-        format.html { redirect_to @lesson, notice: 'Course was successfully updated.'}
+        format.html { redirect_to @course, notice: 'Course was successfully updated.'}
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -52,7 +52,7 @@ class CoursesController < ApplicationController
   private
 
     def course_params
-      params.require(:course).permit(:name, :description)
+      params.require(:course).permit(:name, :description, sections_attributes: [:id, :name, :description, :_destroy], lessons_attributes: [:id, :name, :description, :_destroy])
     end
 
 end
