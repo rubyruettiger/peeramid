@@ -31,7 +31,7 @@ class SectionsController < ApplicationController
 
     respond_to do |format|
       if @section.save
-        format.html { redirect_to course_section_path(@course, @section), notice: 'Section was successfully created.' }
+        format.html { redirect_to @course, notice: 'Section was successfully created.' }
         format.json { render action: 'show', status: :created, location: @section }
       else
         format.html { render action: 'new' }
@@ -45,7 +45,7 @@ class SectionsController < ApplicationController
   def update
     respond_to do |format|
       if @section.update(section_params)
-        format.html { redirect_to course_section_path(@course, @section), notice: 'Section was successfully updated.' }
+        format.html { redirect_to @course, notice: 'Section was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -59,13 +59,18 @@ class SectionsController < ApplicationController
   def destroy
     @section.destroy
     respond_to do |format|
-      format.html { redirect_to course }
+      format.html { redirect_to @course }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
+    def course
+      @course ||= Course.find(params[:course_id])
+    end
+
     def set_section
       @section = @course.sections.find(params[:id])
     end
@@ -73,10 +78,6 @@ class SectionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def section_params
       params.require(:section).permit(:name, :description, lessons_attributes: [:id, :name, :description, :_destroy])
-    end
-
-    def course
-      @course ||= Course.find(params[:course_id])
     end
 
 end
