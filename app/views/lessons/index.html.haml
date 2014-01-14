@@ -10,8 +10,8 @@
     %tr
       %td= link_to 'Show', course_section_lesson_path(@course, @section, lesson)
       %td= link_to 'Edit', edit_course_section_lesson_path(@course, @section, lesson)
-      %td= link_to 'Destroy', lesson, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Destroy', course_section_lesson_path(@course, @section, lesson), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Lesson', new_lesson_path
+= link_to 'New Lesson', new_course_section_lesson_path(@course, @section)
