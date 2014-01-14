@@ -1,1 +1,9 @@
-%h1 Courses
+%h1= @course.name
+%p= @course.description
+
+= link_to "Create Section", new_course_section_path(@course)
+- @course.sections.each do |s|
+	%h3= s.name
+	- s.lessons.each do |l|
+		%h4= l.name
+		%b= l.description
