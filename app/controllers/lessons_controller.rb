@@ -1,5 +1,7 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+  before_action :section, only: [:show, :edit, :update, :destroy]
+  before_action :course, only: [:show, :edit, :update, :destroy]
 
   # GET /lessons
   # GET /lessons.json
@@ -14,8 +16,7 @@ class LessonsController < ApplicationController
 
   # GET /lessons/new
   def new
-    section
-    @lesson = section.lessons.build
+    @lesson = course.section.lessons.build
   end
 
   # GET /lessons/1/edit
@@ -29,7 +30,7 @@ class LessonsController < ApplicationController
 
     respond_to do |format|
       if @lesson.save
-        format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
+        format.html { redirect_to course_section_lessons_path(@course, @section), notice: 'Lesson was successfully created.' }
         format.json { render action: 'show', status: :created, location: @lesson }
       else
         format.html { render action: 'new' }
@@ -75,5 +76,9 @@ class LessonsController < ApplicationController
 
     def section
       @section ||= Section.find(params[:section_id])
+    end
+
+    def course
+      @course ||= Course.find(params[:course_id])
     end
 end

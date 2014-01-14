@@ -1,6 +1,6 @@
 class SectionsController < ApplicationController
   before_action :set_section, only: [:show, :edit, :update, :destroy]
-  before_action :course
+  before_action :course, only: [:show, :edit, :update, :destroy]
 
 
   # GET /sections

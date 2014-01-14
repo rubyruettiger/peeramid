@@ -8,8 +8,8 @@
 
   - @lessons.each do |lesson|
     %tr
-      %td= link_to 'Show', lesson
-      %td= link_to 'Edit', edit_lesson_path(lesson)
+      %td= link_to 'Show', course_section_lesson_path(@course, @section, lesson)
+      %td= link_to 'Edit', edit_course_section_lesson_path(@course, @section, lesson)
       %td= link_to 'Destroy', lesson, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
