@@ -7,6 +7,6 @@
   %b Description:
   = @section.description
 
-= link_to 'Edit', edit_section_path(@section)
+= link_to 'Edit', edit_course_section_path(@course, @section)
 \|
-= link_to 'Back', sections_path
+= link_to 'Back', course_sections_path(@course)

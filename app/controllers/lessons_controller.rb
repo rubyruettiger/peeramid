@@ -14,7 +14,8 @@ class LessonsController < ApplicationController
 
   # GET /lessons/new
   def new
-    @lesson = Lesson.new
+    section
+    @lesson = section.lessons.build
   end
 
   # GET /lessons/1/edit
@@ -70,5 +71,9 @@ class LessonsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
       params.require(:lesson).permit(:name, :description)
+    end
+
+    def section
+      @section ||= Section.find(params[:section_id])
     end
 end

@@ -1,6 +1,6 @@
 class ProgressionsController < ApplicationController
   before_action :set_progression, only: [:show, :edit, :update, :destroy]
-  before_filter :get_user
+  before_filter :user
 
 
 
@@ -65,8 +65,8 @@ class ProgressionsController < ApplicationController
     end
   end
 
-  def get_user
-    @user = User.find(params[:user_id])
+  def user
+    @user ||= User.find(params[:user_id])
   end
 
   private

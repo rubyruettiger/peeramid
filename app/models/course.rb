@@ -7,5 +7,4 @@ class Course < ActiveRecord::Base
 	has_many :users, :through => :progressions
 
 	accepts_nested_attributes_for :sections, :allow_destroy => true
-	accepts_nested_attributes_for :lessons, :allow_destroy => true
 end

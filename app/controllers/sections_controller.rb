@@ -1,5 +1,7 @@
 class SectionsController < ApplicationController
   before_action :set_section, only: [:show, :edit, :update, :destroy]
+  before_action :course
+
 
   # GET /sections
   # GET /sections.json
@@ -14,7 +16,7 @@ class SectionsController < ApplicationController
 
   # GET /sections/new
   def new
-    @section = Section.new
+    @section = course.sections.build
   end
 
   # GET /sections/1/edit
@@ -28,7 +30,7 @@ class SectionsController < ApplicationController
 
     respond_to do |format|
       if @section.save
-        format.html { redirect_to @section, notice: 'Section was successfully created.' }
+        format.html { redirect_to course_section_path(@course, @section), notice: 'Section was successfully created.' }
         format.json { render action: 'show', status: :created, location: @section }
       else
         format.html { render action: 'new' }
@@ -42,7 +44,7 @@ class SectionsController < ApplicationController
   def update
     respond_to do |format|
       if @section.update(section_params)
-        format.html { redirect_to @section, notice: 'Section was successfully updated.' }
+        format.html { redirect_to course_section_path(@course, @section), notice: 'Section was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -69,6 +71,11 @@ class SectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def section_params
-      params.require(:section).permit(:name, :description)
+      params.require(:section).permit(:name, :description, lessons_attributes: [:id, :name, :description, :_destroy])
     end
+
+    def course
+      @course ||= Course.find(params[:course_id])
+    end
+
 end
