@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
   before_action :set_section
-  before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+  before_action :set_lesson, only: [:start, :show, :edit, :update, :destroy]
 
   # GET /lessons
   # GET /lessons.json
@@ -62,6 +62,14 @@ class LessonsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def start
+    current_user.start_unit(@lesson)
+    redirect_to course_section_lesson_path(@course, @section, @lesson), notice: 'You have officially Started this Lesson'
+  end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.\

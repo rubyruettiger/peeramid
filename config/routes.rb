@@ -3,7 +3,9 @@ Peeramid::Application.routes.draw do
 
   resources :courses do
     resources :sections do
-      resources :lessons
+      resources :lessons do
+        member { get :start}
+      end
     end
   end
 
@@ -12,7 +14,7 @@ Peeramid::Application.routes.draw do
   resources :users do
     resources :progressions
   end
-  
+
   root 'pages#home'
   get 'help' =>  'pages#help'
 
@@ -63,7 +65,7 @@ Peeramid::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

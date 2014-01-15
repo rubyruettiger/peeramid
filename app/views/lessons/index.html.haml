@@ -1,2 +1,8 @@
+
 - @lessons.each do |l|
 	%h1= link_to l.name, course_section_lesson_path(@course, @section, l)
+
+.well
+	= link_to @course.name, @course
+	%br
+	= link_to @section.name, course_section_path(@course, @section)
