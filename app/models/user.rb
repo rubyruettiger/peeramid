@@ -17,4 +17,9 @@ class User < ActiveRecord::Base
   	self.first_name + " " + self.last_name
   end
 
+
+  def start_unit(unit)
+    Progression.create([:user_id => self.id, :progressable_id => unit.id, :progressable_type => unit.class.to_s])
+  end
+
 end

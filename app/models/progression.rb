@@ -3,7 +3,7 @@ class Progression < ActiveRecord::Base
 	belongs_to :progressable, :polymorphic => true
 
 
-	def mark_complete
+	def mark_completed
 		self.is_completed = true
 		self.completed_at = Time.now
 	end

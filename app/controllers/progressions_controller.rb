@@ -10,23 +10,10 @@ class ProgressionsController < ApplicationController
     @progressions = @user.progressions
   end
 
-  # GET /progressions/1
-  # GET /progressions/1.json
-  def show
-    @progression = @user.progressions.find(params[:id])
-  end
-
-  # GET /progressions/new
   def new
     @progression = Progression.new
   end
 
-  # GET /progressions/1/edit
-  def edit
-  end
-
-  # POST /progressions
-  # POST /progressions.json
   def create
     @progression = @user.progressions.new(params[:progression])
 
@@ -41,22 +28,8 @@ class ProgressionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /progressions/1
-  # PATCH/PUT /progressions/1.json
-  def update
-    respond_to do |format|
-      if @progression.update(progression_params)
-        format.html { redirect_to @progression, notice: 'Progression was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @progression.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
-  # DELETE /progressions/1
-  # DELETE /progressions/1.json
+
   def destroy
     @progression.destroy
     respond_to do |format|

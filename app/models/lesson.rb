@@ -6,4 +6,12 @@ class Lesson < ActiveRecord::Base
 	has_many :users, :through => :progressions
 
 	validates :name, presence: true
+
+
+
+
+	def start_unit(user, unit)
+		Progression.create([:user_id => user.id, :progressable_id => unit.id, :progressable_type => unit.class.to_s])
+	end
+
 end
