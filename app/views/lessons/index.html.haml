@@ -1,17 +1,2 @@
-%h1 Listing lessons
-
-%table
-  %tr
-    %th
-    %th
-    %th
-
-  - @lessons.each do |lesson|
-    %tr
-      %td= link_to 'Show', course_section_lesson_path(@course, @section, lesson)
-      %td= link_to 'Edit', edit_course_section_lesson_path(@course, @section, lesson)
-      %td= link_to 'Destroy', course_section_lesson_path(@course, @section, lesson), :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Lesson', new_course_section_lesson_path(@course, @section)
+- @lessons.each do |l|
+	%h1= link_to l.name, course_section_lesson_path(@course, @section, l)
