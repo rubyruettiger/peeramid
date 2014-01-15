@@ -1,10 +1,11 @@
 class LessonsController < ApplicationController
+  before_action :set_section
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 
   # GET /lessons
   # GET /lessons.json
   def index
-    @lessons = Lesson.all
+    @lessons = @section.lessons
   end
 
   # GET /lessons/1
@@ -63,10 +64,13 @@ class LessonsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_lesson
+    # Use callbacks to share common setup or constraints between actions.\
+    def set_section
       @course = Course.find(params[:course_id])
       @section = @course.sections.find(params[:section_id])
+    end
+
+    def set_lesson
       @lesson = @section.lessons.find(params[:id])
     end
 
@@ -75,7 +79,5 @@ class LessonsController < ApplicationController
       params.require(:lesson).permit(:name, :description)
     end
 
-    def section
-      @section ||= Section.find(params[:section_id])
-    end
+
 end
