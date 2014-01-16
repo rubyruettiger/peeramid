@@ -1,5 +1,5 @@
 class Section < ActiveRecord::Base
-	has_many :lessons
+	has_many :lessons, dependent: :destroy
 	belongs_to :course
 	
 	has_many :progressions, :as => :progressable

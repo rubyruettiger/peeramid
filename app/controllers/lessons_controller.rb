@@ -15,8 +15,7 @@ class LessonsController < ApplicationController
 
   # GET /lessons/new
   def new
-    section
-    @lesson = section.lessons.build
+    @lesson = course.section.lessons.build
   end
 
   # GET /lessons/1/edit
@@ -30,7 +29,7 @@ class LessonsController < ApplicationController
 
     respond_to do |format|
       if @lesson.save
-        format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
+        format.html { redirect_to course_section_lessons_path(@course, @section), notice: 'Lesson was successfully created.' }
         format.json { render action: 'show', status: :created, location: @lesson }
       else
         format.html { render action: 'new' }
@@ -86,6 +85,5 @@ class LessonsController < ApplicationController
     def lesson_params
       params.require(:lesson).permit(:name, :description)
     end
-
 
 end
