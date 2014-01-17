@@ -1,6 +1,8 @@
 
 - @lessons.each do |l|
 	%h1= link_to l.name, course_section_lesson_path(@course, @section, l)
+	- if l.progressions.find_by(:user => current_user).is_completed
+		%div{:id => [l.id, "completed"]}
 
 .well
 	= link_to @course.name, @course

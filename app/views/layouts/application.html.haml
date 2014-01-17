@@ -13,7 +13,7 @@
 %body
 	.wrapper
 		= render :partial => 'layouts/header'
-		.container
+		%div{:class => request.fullpath == "/" ? 'home' : 'container' }
 			- flash.each do |name, msg|
 				= content_tag(:div, msg, class: "alert alert-#{name}")
 			= yield
