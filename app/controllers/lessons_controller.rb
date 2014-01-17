@@ -64,7 +64,7 @@ class LessonsController < ApplicationController
 
 
   def start
-    current_user.start_unit(@lesson)
+    Progression.create([:user => current_user, :progressable => @lesson])
     redirect_to course_section_lesson_path(@course, @section, @lesson), notice: 'You have officially Started this Lesson'
   end
 

@@ -1,36 +1,38 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
   <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <i class="glyphicon glyphicon-home" style="color: white;"></i>
-<!--       <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span> -->
-    </button>
-    <a class="navbar-brand" href="/">PEERAMID</a>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/courses">PEERAMID</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <%- if user_signed_in? %>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign Out<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+                <li><%= link_to "Edit Info", edit_user_registration_path %>
+          <% else %>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign In<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Sign In", new_user_session_path %></li>
+                <li><a href="#">Sign In with Facebook</a></li>
+          <% end %>
+
+            <li class="divider"></li>
+            <li><%= link_to "Help", help_path%></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
   </div>
-
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-        <%- if user_signed_in? %>
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign Out<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-              <li><%= link_to "Edit Info", edit_user_registration_path %>
-        <% else %>
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign In<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Sign In", new_user_session_path %></li>
-              <li><a href="#">Sign In with Facebook</a></li>
-        <% end %>
-
-          <li class="divider"></li>
-          <li><%= link_to "Help", help_path%></li>
-        </ul>
-      </li>
-    </ul>
-  </div><!-- /.navbar-collapse -->
 </nav>
+<!--- /.containter -->

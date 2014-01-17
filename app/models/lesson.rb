@@ -10,8 +10,6 @@ class Lesson < ActiveRecord::Base
 
 
 
-	def start_unit(user, unit)
-		Progression.create([:user_id => user.id, :progressable_id => unit.id, :progressable_type => unit.class.to_s])
-	end
+
 
 end
