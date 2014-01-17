@@ -122,7 +122,6 @@ footer, .push {
 	background-color: hsla(6, 78, 50, 1);
 	border: none;
 	width: 40px;
-	border-radius: 100%;
 	&:hover {
 		background-color: hsla(6, 78, 57, 1);
 	}
@@ -130,6 +129,10 @@ footer, .push {
 		background-color: hsla(6, 78, 57, 1);
 		outline: none;
 	};
+}
+
+.navbar-default .dropdown-toggle {
+	margin-right: 15px;
 }
 
 

@@ -15,7 +15,17 @@ Peeramid::Application.routes.draw do
     resources :progressions
   end
 
+
+
+  authenticated :user do
+    root "courses#index", as: :authenticated_root
+  end
+
   root 'pages#home'
+
+
+
+
   get 'help' =>  'pages#help'
 
 

@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :progressions
+  has_many :progressions, dependent: :destroy
 
 
   has_many :tutorships, foreign_key: "tutor_id", dependent: :destroy
