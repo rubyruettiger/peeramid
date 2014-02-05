@@ -1,4 +1,8 @@
+.center
+	%h1 Courses:
 - @courses.each do |course|
-	%h1= link_to course.name, course
-	%p= course.description
-=link_to "Create A New Course", new_course_path
+	.center
+		%h1.bigfont= link_to course.name, course
+		%p= course.description
+.center
+	=link_to "Create A New Course", new_course_path

@@ -15,8 +15,16 @@ body {
 
 
 
-/* Bootstrap Classes */
 
+
+a {
+	&:hover {
+		text-decoration: none;
+	};
+}
+
+
+/* Bootstrap Classes */
 
 
 .btn a {
@@ -35,7 +43,21 @@ body {
 	border-style: none;
 }
 
+.alert {
+	margin-bottom: auto;
+}
 
+/* Panels */
+
+.panel-info {
+	width: 400px;
+	margin-top: 30px;
+}
+
+.panel-lesson {
+	padding: 5em;
+	margin: 2em;
+}
 
 
 /* Classes */
@@ -43,6 +65,27 @@ body {
 
 .center {
 	text-align: center;
+}
+
+.bigfont {
+	font-family: "lato:900", sans-serif;
+	font-weight: bold;
+}
+
+.biggerfont {
+	font-family: "lato:900", sans-serif;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.bigh1 {
+	font-family: "lato:900", sans-serif;
+	font-weight: bold;
+	font-size: 50px;
+}
+
+.inline {
+	display: inline-block;
 }
 
 
@@ -81,7 +124,7 @@ footer, .push {
 
 
 
-// /* navigation bar */
+ /* navigation bar */
 
 .navbar-default {
 	background-color: #39AECF;
@@ -111,14 +154,14 @@ footer, .push {
 }
 
 .navbar-default .navbar-toggle {
-	background-color: hsla(6, 78, 50, 1);
+	background-color: hsla(180, 78, 79, 1);
 	border: none;
 	width: 40px;
 	&:hover {
-		background-color: hsla(6, 78, 57, 1);
+		background-color: hsla(180, 78, 57, 1);
 	}
 	&:focus {
-		background-color: hsla(6, 78, 57, 1);
+		background-color: hsla(180, 78, 57, 1);
 		outline: none;
 	};
 }
@@ -139,7 +182,7 @@ color: white;
 /* landing page */
 
 
-#home1 {
+#home {
 	background: url('sky.jpg') no-repeat 50% 0 fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
@@ -150,18 +193,6 @@ color: white;
   font-family: futura;
 }
 
-#home2 {
-	background: url('bricks.jpg') no-repeat 50% 0 fixed;
-	background-size: cover;
-	-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  height: 40em;
-  width: 100%;
-  font-family: futura;
-  color: white;
-  padding-top: 50px;
-}
 
 .jumbotron {
 	background-color: rgba(231, 76, 60, 0.0);
@@ -170,28 +201,22 @@ color: white;
 }
 
 
-#brickwall {
-	margin-top: 15em;
-	color: white;
-}
-
-
-#brickwall h1 {
-	font-size: 60px;
-	font-weight: bold;
-}
-
-
-
 
 
 /* Media Queries */
 
 @media screen and (max-width: 480px) {
 
-	.panel {
+	.panel-info {
 		width: 290px;
 	}
+
+	.panel-lesson {
+		width: 250px;
+		padding: 1em;
+		margin: 3px;
+	}
+
 
 	.jumbotron {
 		margin-top: 0;

@@ -1,13 +1,23 @@
-%h1= @course.name
-%p= @course.description
+%br
+%br
+.center
+	%h1.bigh1= @course.name
+	%br
+	%p= @course.description
+
+%br
+%br
 
 - @course.sections.each do |s|
 	.well
-		%h2= s.name
-		%b= s.description
-		= link_to "Edit Section", edit_course_section_path(@course, s)
+		.center
+			%h3.bigfont Section #{s.id}:
+			%h2.bigfont= s.name
+			%b= s.description
+			= link_to "Edit Section", edit_course_section_path(@course, s)
 		- s.lessons.each do |l|
-			.panel
-				%h4=link_to l.name, course_section_lesson_path(@course, s, l)
+			.panel.panel-lesson
+				%li
+					%h4.biggerfont=link_to l.name.upcase, course_section_lesson_path(@course, s, l)
 				%b= l.description
 = link_to "Create Section", new_course_section_path(@course)
