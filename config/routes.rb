@@ -12,7 +12,9 @@ Peeramid::Application.routes.draw do
   devise_for :users
 
   resources :users do
-    resources :progressions
+    resources :progressions do
+      member { get :mark_completed}
+    end
   end
 
 

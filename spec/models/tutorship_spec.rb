@@ -4,7 +4,9 @@ describe Tutorship do
 
   let(:user_a) { FactoryGirl.create(:user) }
   let(:user_b) { FactoryGirl.create(:user) }
-  subject { tutorship} { user_a.tutorships.build(student_id: user_b.id) }
+  let(:tutorship) { user_a.tutorships.build(student_id: user_b.id) }
+
+  subject { tutorship}
 
 
   it { should be_valid }

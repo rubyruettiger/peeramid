@@ -11,6 +11,7 @@ class LessonsController < ApplicationController
   # GET /lessons/1
   # GET /lessons/1.json
   def show
+    @progress = @lesson.progressions.find_by(:user => current_user)
   end
 
   # GET /lessons/new

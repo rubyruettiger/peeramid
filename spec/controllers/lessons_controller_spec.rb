@@ -20,7 +20,7 @@ describe LessonsController do
 
 
 		it "displays a check mark next to complete lessons" do
-			progression.mark_completed
+			progression.complete
 			progression.save
 			get :index, :section_id => section.id, :course_id => course.id
 			response.body.should match(/<div id='#{lesson.id}_completed'/)
@@ -52,6 +52,8 @@ describe LessonsController do
 
 
 		pending "create a mark_approved action that teachers can do to students that marks progressions approved"
+
+		pending " When a user completes a course, they can now be made a mentor for that course -- create relationship between mentors and courses (or just have ability for someone to be mentor) -- they can then have a student"
 
 	end
 

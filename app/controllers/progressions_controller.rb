@@ -1,6 +1,7 @@
 class ProgressionsController < ApplicationController
-  before_action :set_progression, only: [:show, :edit, :update, :destroy]
   before_filter :user
+  before_action :set_progression, only: [:show, :edit, :update, :destroy]
+
 
 
 
@@ -41,6 +42,13 @@ class ProgressionsController < ApplicationController
   def user
     @user ||= User.find(params[:user_id])
   end
+
+  def mark_completed
+    @progression = Progression.find(params[:id])
+    @progression.complete
+    redirect_to request.referer, notice: "You've completed this lesson, we're telling your boss!"
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -25,7 +25,7 @@ describe Progression do
 	  	Time.stub(:now).and_return(@time_now)
   	}
   	it " should record the current time upon completion" do
-	  	progression.mark_completed
+	  	progression.complete
 	  	progression.is_completed.should == true
 	  	progression.completed_at.should eql(Time.now)
 
