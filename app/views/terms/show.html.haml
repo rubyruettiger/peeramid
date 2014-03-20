@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @term.name
+%p
+  %b Content:
+  = @term.content
+%p
+  %b Link:
+  = @term.link
+
+= link_to 'Edit', edit_term_path(@term)
+\|
+= link_to 'Back', terms_path
